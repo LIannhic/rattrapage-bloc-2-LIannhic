@@ -1,7 +1,7 @@
 <?php
 
 // On recupère le mot-clé de recherche depuis la requête GET
-$keyword = isset($_GET['q']) ? $_POST['q'] : '';
+$keyword = isset($_GET['q']) ? $_GET['q'] : '';
 $keyword = htmlspecialchars($keyword, ENT_QUOTES, 'UTF-8'); // Échappe les caractères spéciaux pour éviter les injections XSS
 $keyword = trim($keyword); // Supprime les espaces en début et fin de chaîne
 
