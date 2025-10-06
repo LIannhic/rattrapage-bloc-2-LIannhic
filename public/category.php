@@ -12,7 +12,10 @@ if ($categoryId <= 0) {
 }
 
 // Récupération des catégories depuis la base de données
-// TODO ... 
+$sql = "SELECT * FROM categories";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Récupération de la catégorie depuis la base de données
 $sql = "SELECT * FROM categories WHERE id = :id";
