@@ -10,7 +10,10 @@ require_once __DIR__ . '/../config/db_connect.php';
 require_once __DIR__ . '/../config/functions.php';
 
 // Récupération des catégories depuis la base de données
-// TODO ...
+$sql = "SELECT * FROM categories";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // On recherche les articles qui contiennent le mot-clé dans le titre ou le contenu
 $sql = "SELECT * FROM articles WHERE title LIKE :keyword OR content LIKE :keyword_bis ORDER BY published_at DESC";
