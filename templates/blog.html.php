@@ -14,9 +14,9 @@
             <?php foreach ($articles as $post): ?>
             <div class="card mb-4">
                 <div class="card-body">
-                    <h3 class="card-title"><?= $post['title'] ?></h3>
+                    <h3 class="card-title"><?= htmlspecialchars($post['title']) ?></h3>
                     <p class="card-subtitle mb-2 text-muted"><?= formatDateFr($post['published_at']) ?> by <a href="#">MNS</a></p>
-                    <p class="card-text"><?= $post['content'] ?></p>
+                    <p class="card-text"><?= htmlspecialchars($post['content']) ?></p>
                     <a href="#" class="btn btn-orange mt-auto">En savoir plus</a>
                 </div>
             </div>
