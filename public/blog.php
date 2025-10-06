@@ -9,7 +9,10 @@ $stmt->execute();
 $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Récupération des catégories depuis la base de données
-// TODO ...
+$sql = "SELECT * FROM categories";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Inclusion du template d'affichage des articles
 include __DIR__ . '/../templates/blog.html.php';
