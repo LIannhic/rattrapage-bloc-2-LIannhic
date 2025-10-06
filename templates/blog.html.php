@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/_header.html.php'; ?>
 <!-- Page Header -->
 <header class="bg-orange text-white text-center py-5 mb-4">
     <div class="container">
