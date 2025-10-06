@@ -4,7 +4,10 @@ require_once __DIR__ . '/../config/db_connect.php';
 require_once __DIR__ . '/../config/functions.php';
 
 // Récupération des 4 derniers articles depuis la base de données
-// TODO ... 
+$sql = "SELECT * FROM articles ORDER BY published_at DESC LIMIT 4";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$latestPosts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Récupération des catégories depuis la base de données
 $sql = "SELECT * FROM categories";
