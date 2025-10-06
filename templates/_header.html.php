@@ -48,7 +48,7 @@
                             </li>
                             <?php foreach ($categories as $c): ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="/category.php?id=<?= $c['id'] ?>"
+                                <a class="nav-link" href="/category.php?id=<?= htmlspecialchars($c['id']) ?>"
                                     ><?= htmlspecialchars($c['name']) ?></a
                                 >
                             </li>
